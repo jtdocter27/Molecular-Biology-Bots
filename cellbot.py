@@ -31,6 +31,13 @@ class Cellbot:
             return 'Supreme Overlord Cresten decrees a doubling of cells! Hazaah!'
         if 'john' in user_input.lower():
             return 'Do not ask questions about my creator. Half your cells are destroyed'
+        if 'matt'in user_input.lower(): 
+            return 'Hello Hudson'
+        if 'hudson' in user_input.lower():
+            return 'Hello Matt'
+        if 'melanie' in user_input.lower():
+            return 'Plus four electrons and 2 carbons for having to listen sit near utter nonsense all day'
+
         if any(word in user_input.lower() for word in ['trait', 'traits', 'evolve']):
             self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate']
             return random.choice(self.traits)
