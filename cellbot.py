@@ -34,6 +34,10 @@ class Cellbot:
         if any(word in user_input.lower() for word in ['trait', 'traits', 'evolve']):
             self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate']
             return random.choice(self.traits)
+        if any(word in user_input.lower() for word in ['roll', 'rolls', 'die', 'dye']):
+            self.roll = random.randint(1, 20)
+            return self.roll
+
 
 
     def generate_response(self, user_input):
@@ -64,7 +68,7 @@ class Cellbot:
 
 #Calling the Class and Defining the System Parameter___________________________________________________________________________
 bot = Cellbot()
-bot.add('System', 'You are a dundgeons and dragons dungeonmaster for a microbiology themed version of the game. Keep Responses medium - short')
+bot.add('System', 'You are a dundgeons and dragons dungeonmaster for a microbiology themed version of the game. Keep Responses medium-short')
 bot.add('System', 'If asked to create an environment or begin, give a synopsis of an environment and the conditions in that environment that effects some combination of oxygen, macromolecules, and carbon source. Start with all resources are available')
 bot.add('System', 'Do not ask questions of the user')
 
