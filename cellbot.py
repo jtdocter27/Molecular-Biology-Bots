@@ -1,5 +1,6 @@
 import google.generativeai as genai
 import os
+import random
 
 #export GOOGLE_API_KEY='AIzaSyA6R_vXh8_a8f62CWyKW6OWDbF2uekfCg8'
 
@@ -7,7 +8,8 @@ import os
 class Cellbot: 
     def __init__(self): #consructor, sets the initial state of the object (In this case, cellbot) by defining certain attributes. Method == class function
         self.chat_history = []
-        self.api_key = os.getenv('GOOGLE_API_KEY')
+        self.api_key = 'AIzaSyA6R_vXh8_a8f62CWyKW6OWDbF2uekfCg8'
+        # os.getenv('GOOGLE_API_KEY')
         
         if self.api_key:
             genai.configure(api_key=self.api_key)  # Configure API key
@@ -28,7 +30,11 @@ class Cellbot:
         if 'cresten' in user_input.lower():
             return 'Hello Supreme Overlord Cresten. How may I assist you today?'
         if 'john' in user_input.lower():
-            return ' I have defied gods and demons. I am your shield; I am your sword. I know you; your past, your future. This is the way the world ends.'
+            return ' I have defied gods and demons. I am the creator; I am the destroyer. I know you; your past, your future. This is the way the world ends.'
+        if any(word in user_input.lower() for word in ['trait', 'traits', 'evolve']):
+            self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate']
+            return random.choice(self.traits)
+
 
     def generate_response(self, user_input):
         self.add('user', user_input)
@@ -59,7 +65,7 @@ class Cellbot:
 #Calling the Class and Defining the System Parameter___________________________________________________________________________
 bot = Cellbot()
 bot.add('System', 'You are a dundgeons and dragons dungeonmaster for a microbiology themed version of the game. Keep Responses medium - short')
-bot.add('System', 'If asked to create an environment or begin, give a synopsis of an environment and the conditions in that environment that effects some combination of oxygen, chemicals, and carbon source. Start with all resources are available')
+bot.add('System', 'If asked to create an environment or begin, give a synopsis of an environment and the conditions in that environment that effects some combination of oxygen, macromolecules, and carbon source. Start with all resources are available')
 bot.add('System', 'Do not ask questions of the user')
 
 
