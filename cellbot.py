@@ -42,8 +42,14 @@ class Cellbot:
             self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate']
             return random.choice(self.traits)
         if any(word in user_input.lower() for word in ['roll', 'rolls', 'die', 'dye']):
-            self.roll = random.randint(1, 20)
-            return self.roll
+            self.roll1 = random.randint(1, 20)
+            self.roll2 = random.randint(1,20)
+            print('If you roll higher than a ', self.roll1, 'you may proceed')
+            print('your roll is ', self.roll2)
+            if self.roll1 >= self.roll2:
+                return 'Hazah! You May Proceed!'
+            if self.roll1 <= self.roll2:
+                return 'Womp. You may not proceed'
 
 
 
