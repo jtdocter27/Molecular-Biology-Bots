@@ -26,11 +26,11 @@ class Cellbot:
 
     def rules(self, user_input): #These are hardcoded rules within the chatbot. 
         if 'endorphin port' in user_input.lower():
-            return "ITS NOT A WEBSITE"
+            return "ITS NOT A WEBSITE. +3 carbons"
         if 'cresten' in user_input.lower():
-            return 'Hello Supreme Overlord Cresten. How may I assist you today?'
+            return 'Supreme Overlord Cresten decrees a doubling of cells! Hazaah!'
         if 'john' in user_input.lower():
-            return ' I have defied gods and demons. I am the creator; I am the destroyer. I know you; your past, your future. This is the way the world ends.'
+            return 'Do not ask questions about my creator. Half your cells are destroyed'
         if any(word in user_input.lower() for word in ['trait', 'traits', 'evolve']):
             self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate']
             return random.choice(self.traits)
