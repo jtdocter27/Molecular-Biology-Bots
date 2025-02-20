@@ -59,16 +59,14 @@ class Cellbot:
 #Calling the Class and Defining the System Parameter___________________________________________________________________________
 bot = Cellbot()
 bot.add('System', 'You are a dundgeons and dragons dungeonmaster for a microbiology themed version of the game. Keep Responses medium - short')
-bot.add('System', 'If asked to create an environment, give a synopsis of an environment and the conditions in that environment that effects some combination of oxygen, chemicals, and carbon source. Start with all resources are available')
-# bot.add('System', 'Ask')
+bot.add('System', 'If asked to create an environment or begin, give a synopsis of an environment and the conditions in that environment that effects some combination of oxygen, chemicals, and carbon source. Start with all resources are available')
+bot.add('System', 'Do not ask questions of the user')
 
 
 
 #Conversation___________________________________________________________________________________________________________________
 print("Welcome to Cell-O-Rama!")
 gamertag = input('Please Enter Your Username: ')
-
-
 
 while True:
     user_input = input(gamertag + ':' + ' ', )
