@@ -36,16 +36,16 @@ class Cellbot:
         if 'hudson' in user_input.lower():
             return 'Hello Matt'
         if 'melanie' in user_input.lower():
-            return 'Plus four electrons and 2 carbons for having to listen sit near utter nonsense all day'
+            return 'Plus four electrons and 2 carbons for having to listen & sit near utter nonsense all day'
 
         if any(word in user_input.lower() for word in ['trait', 'traits', 'evolve']):
-            self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate']
+            self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate', 'Crispr-Cas: Can generate any trait you want but must delete after one use']
             return random.choice(self.traits)
-        if any(word in user_input.lower() for word in ['roll', 'rolls', 'die', 'dye']):
+        if any(word in user_input.lower() for word in ['roll', 'rolls', 'die', 'dye', 'dice']):
             self.roll1 = random.randint(1, 20)
             self.roll2 = random.randint(1,20)
-            print('If you roll higher than a ', self.roll1, 'you may proceed')
-            print('your roll is ', self.roll2)
+            print('If you roll higher than a', self.roll2, 'you may proceed')
+            print('your roll is', self.roll1)
             if self.roll1 >= self.roll2:
                 return 'Hazah! You May Proceed!'
             if self.roll1 <= self.roll2:
