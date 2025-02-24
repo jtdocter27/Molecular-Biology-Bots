@@ -25,22 +25,26 @@ class Cellbot:
         self.chat_history.append({'role': role, 'message': message})
 
     def rules(self, user_input): #These are hardcoded rules within the chatbot. 
-        if 'endorphin port' in user_input.lower():
-            return "ITS NOT A WEBSITE. +3 carbons"
         if 'cresten' in user_input.lower():
             return 'Supreme Overlord Cresten decrees a doubling of cells! Hazaah!'
         if 'john' in user_input.lower():
             return 'Do not ask questions about my creator. Half your cells are destroyed'
-        if 'matt'in user_input.lower(): 
-            return 'Hello Hudson'
-        if 'hudson' in user_input.lower():
-            return 'Hello Matt'
-        if 'melanie' in user_input.lower():
-            return 'Plus four electrons and 2 carbons for having to listen & sit near utter nonsense all day'
+        if 'tardigrade' in user_input.lower():
+            return 'Eureka! You found a tardigrade! x10 cells'
+        if 'crying' in user_input.lower():
+            return 'There\'s no crying in baseball'
+        if 'tricerotops' in user_input.lower():
+            return 'It\'s not a buffalo! +1 carbon courtesy of the SEEC cafe' 
+        if '  ' in user_input.lower():
+            return 'Youve unlocked the mirror forms of all your macromolecules - and half of your cells must fight half of your cells. Ask Cresten. Good luck'
+        if 'troy and abed in the morning' in user_input.lower():
+            return 'one of your cells has become aware it is a simulated entity in a game...'
 
-        if any(word in user_input.lower() for word in ['trait', 'traits', 'evolve']):
+        if any(word in user_input.lower() for word in ['master', 'evolve all']):
             self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate', 'Crispr-Cas: Can generate any trait you want but must delete after one use']
             return random.choice(self.traits)
+        
+
         if any(word in user_input.lower() for word in ['roll', 'rolls', 'die', 'dye', 'dice']):
             self.roll1 = random.randint(1, 20)
             self.roll2 = random.randint(1,20)
@@ -83,6 +87,7 @@ class Cellbot:
 bot = Cellbot()
 bot.add('System', 'You are a dundgeons and dragons dungeonmaster for a microbiology themed version of the game. Keep Responses medium-short')
 bot.add('System', 'If asked to create an environment or begin, give a synopsis of an environment and the conditions in that environment that effects some combination of oxygen, macromolecules, and carbon source. Start with all resources are available')
+bot.add('System', 'Set a challenge score between 10 and 20 for most relevant variable out of this list: organic carbon, oxygen concentration, light availability, general stress')
 bot.add('System', 'Do not ask questions of the user')
 
 
