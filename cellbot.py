@@ -41,8 +41,20 @@ class Cellbot:
             return 'one of your cells has become aware it is a simulated entity in a game...'
 
         if any(word in user_input.lower() for word in ['master', 'evolve all']):
-            self.traits = ['Modified Lipid Layer Confers +1 Temperature Resistance', 'Cell Wall Defense Upgrade +2, -1C and 1e to use', 'Sporulate! Use all Carbon and all Energy to sit a turn out', 'Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate', 'Crispr-Cas: Can generate any trait you want but must delete after one use']
-            return random.choice(self.traits)
+            self.traits = ['Histone Coiling creates resistance to DNA damage +3, requires 1 C and 1E to activate', 'Crispr-Cas: Can generate any trait you want but must delete after one use', 'Cell Wall, all defense rolls +2, requires 1 C and 1 E'
+                           , 'Modified lipid layer, temp resistance (user selects), all temp resistance rolls +1', 'Centromeres - resistance to DNA damage +3, requires 1C and 1E to activate', 'Improved cofactors, e+1, no cost to protein specialists, all else 2C', 
+                            'Surface Modification Site Modification - resistance to viral attack +3, requires 1e to use', 'Supercoiling - no cost to nucleic acid specialist, all else +2e to activate, defense to damage +4', 'Slime layer - no cost for carbohydrate specialist, defense +3, 1e and 2C to use for all else', 
+                              'Larger storage granules - no cost for carbohydrate specialists - double any stored C or N', 'Outcompete for C - >d15 roll by every other organism to see if they have access to the identical carbon source that turn, 2e to activate', 
+                               'Genome expansion +1 trait', 'Gas Vacuoles - photosynthesis receives a +3 on the roll for energy generation, 2C to use', 'DNA methylation - resistance to viral attack +7, requires 1C to use', 'Deplete N - >d15 roll from all other organisms to see if they have access to N for growth, 2e to activate', 
+                                'Transposon site mutation - Gain a bonus trait with each viral attack', 'Nutrient exchange - Shuttle Cs for es or es for Cs (no mixing per turn) with another organism, requires 1e to activate', 'Evolved transporters - +3C, requires 1e to use', 
+                                'Cellulose Synthesis - if carbohydrate specialist, this occurs at no cost, all other +2C and +2e, resistance to all damage +5, excess 1e and 1C storage automatic', 'Lipid sacs - if lipid specialist, this occurs at no cost, all other +2C and +2e, resistance to toxic damage +7, resistance to membrane damages +10, excess 3e and 1C storage automatic', 
+                                 'Novel energy source, only applicable to organos, e+3','Double rRNA encoded on genome, express +1 trait', 'Create toxin - if carbohydrate specialist, this occurs at no cost, all other +3C and +1e, all competing organisms roll under "poisoned" condition, all non-metabolic rolls -5', 
+                                   'New pigments - only applicable to phototrophs, e+7, required 2C to use', 'Improved ftsZ, if growth requirement >1, then growth e and C -1 (minimum of 1 still required)', 'DnaJ - All resistance to nucleic acid damage rolls +7, requires 1C and 1e to use', 
+                                      'GroEL - All resistance to damage rolls +7, requires 1 C and 1 e to use', 'Super Oxide Dismutase - All O2 resistance rolls +7, requires 1 C and 1 e to use', 'Wood-Linjedhal Pathway - Novel Carbon Source Pathway - Resistant to Carbon Limitation - requires 3e to use', 'Evolved NADH-Ubiquone Oxidoreductase - Respiration chain e+1', 'Evolved ATPase - Respiration chain e+1', 
+                                         'Plasmid - hold and express one trait at no cost', 'Conjugation - copy a trait from any other cell, requires 3e and 3C to activate', 'Flagella - protein action, flea the environment, roll to see if the stress even effects (>d15, avoids), requires 3e to activate', 'Predation - bonus carbon source and energy source, all other players must roll a >d15 to avoid predation, roll 2 d6s to determine number of cells consumed, if also expressing flagella, roll 10 d6s, requires 5e', 
+                                            'Transformation - at the end of the turn, add any trait that has been evolved over time, 3e to activate', 'Double strand DNA breaks (DNA pol IV) - immune to salt, uv, and radiation stress, 4e to activate', 'Sporulate - Use all Carbon and all Energy to sit a turn out - adds +15 to all environment rolls', 
+                                              'Endosymbiosis - resistance to all environment stresses +10, C generation -2, e generation -1, lose three traits, irreversible']
+            return '\n\n'.join(random.choices(self.traits, k=13))
         
 
         if any(word in user_input.lower() for word in ['roll', 'rolls', 'die', 'dye', 'dice']):
@@ -93,7 +105,7 @@ bot.add('System', 'Do not ask questions of the user')
 
 
 #Conversation___________________________________________________________________________________________________________________
-print("Welcome to Cell-O-Rama!")
+print("Welcome to Cell-O-Rama! \n")
 gamertag = input('Please Enter Your Username: ')
 
 while True:
